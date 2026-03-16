@@ -1,9 +1,15 @@
 [build]
-command = "npm run build"
-publish = "dist"
+  command = "npm run build"
+  publish = "dist"
 
+# 重要：先匹配静态资源
 [[redirects]]
-from = "/*"
-to = "/index.html"
-status = 200
-force = true
+  from = "/assets/*"
+  to = "/assets/:splat"
+  status = 200
+
+# 最后再匹配所有路由
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
