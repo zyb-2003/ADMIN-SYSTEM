@@ -1,0 +1,5 @@
+# 创建public文件夹（如果不存在）
+mkdir -p public
+
+# 创建_redirects文件
+echo "/* /index.html 200" > public/_redirects
