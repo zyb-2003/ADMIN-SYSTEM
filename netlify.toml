@@ -1,7 +1,8 @@
-# 在项目根目录执行
-cat > netlify.toml << 'EOF'
+﻿[build]
+  command = "npm run build"
+  publish = "dist"
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
-EOF
